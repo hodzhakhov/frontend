@@ -3,66 +3,87 @@
 
   <head>
     <meta charset="UTF-8" />
-    <title>Wallet App</title>
-    <meta name="description" content="Wallet app" />
-    <meta name="keywords" content="wallet, crypto" />
+    <title>wlt App</title>
+    <meta name="description" content="wlt app" />
+    <meta name="keywords" content="wlt, crypto" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
   </head>
 
   <body>
-    <div class="container">
-      <div class="header">
-        <h1>Wallet</h1>
+    <main class="wlt">
+      <div class="wlt__container">
+
+        <div class="balance">
+          <p class="balance__label">Total balance</p>
+          <h2 id="total-balance" class="balance__amount">$0.00</h2>
+        </div>
+
+        <div class="actions">
+          <button class="actions__button">Send</button>
+          <button class="actions__button">Add Crypto</button>
+          <button class="actions__button">Exchange</button>
+        </div>
+
+        <ul class="coin-list">
+          <li class="coin-list__item">
+            <div class="coin">
+              <div class="coin__icon">
+                <img src="./media/tether.png" alt="Dollar">
+              </div>
+              <div class="coin__description">
+                <div class="coin__name-wrapper">
+                  <span class="coin__name">USDT</span>
+                  <span id="usdt-price" class="coin__price">$1</span>
+                </div>
+                <div class="coin__balance">
+                  <div id="usdt-value" class="coin__value">$0.00</div>
+                  <div id="usdt-amount" class="coin__amount">5 USDT</div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="coin-list__item">
+            <div class="coin">
+              <div class="coin__icon">
+                <img src="./media/btc.png" alt="Bitcoin">
+              </div>
+              <div class="coin__description">
+                <div class="coin__name-wrapper">
+                  <span class="coin__name">Bitcoin</span>
+                  <span id="btc-price" class="coin__price">$100</span>
+                </div>
+                <div class="coin__balance">
+                  <div id="btc-value" class="coin__value">$0.00</div>
+                  <div id="btc-amount" class="coin__amount">0.005 BTC</div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="coin-list__item">
+            <div class="coin">
+              <div class="coin__icon">
+                <img src="./media/ton.png" alt="Toncoin">
+              </div>
+              <div class="coin__description">
+                <div class="coin__name-wrapper">
+                  <span class="coin__name">Toncoin</span>
+                  <span id="ton-price" class="coin__price">$100</span>
+                </div>
+                <div class="coin__balance">
+                  <div id="ton-value" class="coin__value">$0.00</div>
+                  <div id="ton-amount" class="coin__amount">5 TON</div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
+    </main>
 
-      <div class="balance-section">
-        <p>Total balance</p>
-        <h2>$0.00</h2>
-      </div>
-
-      <div class="actions">
-        <button>Send</button>
-        <button>Add Crypto</button>
-        <button>Exchange</button>
-      </div>
-
-      <ul class="coin-list">
-        <li>
-          <div class="coin-item">
-            <img src="./media/tether.png" alt="Dollar">
-            <span class="coin-name">Dollars</span>
-          </div>
-          <div class="coin-balance">
-            <div class="value">$0.00</div>
-            <div class="coin-value">0 USDT</div>
-          </div>
-        </li>
-
-        <li>
-          <div class="coin-item">
-            <img src="./media/btc.png" alt="Bitcoin">
-            <span class="coin-name">Bitcoin</span>
-          </div>
-          <div class="coin-balance">
-            <div class="value">$0.00</div>
-            <div class="coin-value">0 BTC</div>
-          </div>
-        </li>
-
-        <li>
-          <div class="coin-item">
-            <img src="./media/ton.png" alt="Toncoin">
-            <span class="coin-name">Toncoin</span>
-          </div>
-          <div class="coin-balance">
-            <div class="value">$0.00</div>
-            <div class="coin-value">0 TON</div>
-          </div>
-        </li>
-      </ul>
-    </div>
-
+    <script src="./scripts/script.js"></script>
   </body>
 
 </html>
