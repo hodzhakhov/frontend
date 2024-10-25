@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>wlt add</title>
+        <meta name="description" content="wlt app" />
+        <meta name="keywords" content="wlt, crypto" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/add.css">
+        <script src="./scripts/add.js"></script>
+    </head>
+    <body>
+        <main class="add">
+            <div class="add__container">
+                <h1 class="add__title">Receive ETH network assets</h1>
+                <p class="add__description">
+                    Send only tokens in ETH Network to this
+                    address, otherwise you might lose your funds.
+                </p>
+
+                <div class="add__address">
+                    <p class="add__address-text">Your ETH address</p>
+                    <p class="add__address-code" id="displayAddress"></p>
+                    <p id="fullAddress"
+                        style="display:none;">0x086847025b2b48E9829474b725DB13D045f81D79</p>
+                    <button class="add__copy-button" id="copyButton">Copy
+                        Address</button>
+
+                    <div id="copyNotification" class="add__notification"
+                        style="display:none;">
+                        Address copied to clipboard!
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </body>
+</html>
