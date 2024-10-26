@@ -109,3 +109,17 @@ body {
     font-size: 0.9em;
     color: #999;
 }
+
+.footer {
+    margin-top: 10px;
+}
+
+.footer__banner {
+    width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+    .footer__banner {
+        display: none;
+    }
+}

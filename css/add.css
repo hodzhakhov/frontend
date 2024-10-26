@@ -23,13 +23,6 @@ body {
     padding: 20px;
 }
 
-.add__header {
-    font-size: 18px;
-    font-weight: bold;
-    color: #a2b9dc;
-    margin-bottom: 20px;
-}
-
 .add__title {
     font-size: 16px;
     font-weight: bold;
@@ -73,25 +66,6 @@ body {
 
 .add__copy-button:hover {
     background-color: #2d4373;
-}
-
-.add__qr-button {
-    background-color: #111c32;
-    color: white;
-    border: 1px solid #3b5998;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
-
-.add__qr-button:hover {
-    background-color: #26364e;
-}
-
-.add__footer {
-    font-size: 12px;
-    color: #666666;
 }
 
 .add__notification {
