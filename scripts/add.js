@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const BackButton = window.Telagram.WebApp.BackButton;
+    BackButton.show();
+    BackButton.onClick(() => {
+        window.location.href = 'index.html';
+    });
+
     const fullAddress = document.getElementById('fullAddress').textContent;
     const displayAddress = document.getElementById('displayAddress');
     const copyButton = document.getElementById('copyButton');
