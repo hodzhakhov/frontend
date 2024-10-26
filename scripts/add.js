@@ -31,5 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-let BackButton = window.Telagram.WebApp.BackButton;
-BackButton.show();
+let tg = window.Telagram.WebApp;
+tg.BackButton.show().onClick(function () {
+    tg.showAlert("Back button clicked!");
+});
