@@ -118,7 +118,7 @@ body {
     width: 100%;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (max-width: 500px) {
     .footer__banner {
         display: none;
     }

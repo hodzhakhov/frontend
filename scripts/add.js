@@ -1,3 +1,13 @@
+(function () {
+    window.addEventListener('load', function () {
+        const loadTime = performance.now();
+        const loadTimeInSeconds = (loadTime / 1000).toFixed(2);
+
+        const loadTimeInfo = document.getElementById('load-time-info');
+        loadTimeInfo.textContent = `Page load time: ${ loadTimeInSeconds } seconds`;
+    });
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
     const fullAddress = document.getElementById('fullAddress').textContent;
     const displayAddress = document.getElementById('displayAddress');
