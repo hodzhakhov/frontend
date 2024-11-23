@@ -8,17 +8,31 @@ document.addEventListener("DOMContentLoaded", () => {
         const tbody = table.querySelector("tbody");
         const row = document.createElement("tr");
 
-        row.innerHTML = `
-            <td contenteditable="true">New Currency</td>
-            <td contenteditable="true">0.00</td>
-            <td contenteditable="true">Add notes...</td>
-            <td><button class="deleteRow">Delete</button></td>
-        `;
+        const currencyCell = document.createElement("td");
+        currencyCell.contentEditable = "true";
+        currencyCell.textContent = "New Currency";
 
-        const deleteButton = row.querySelector(".deleteRow");
+        const balanceCell = document.createElement("td");
+        balanceCell.contentEditable = "true";
+        balanceCell.textContent = "0.00";
+
+        const notesCell = document.createElement("td");
+        notesCell.contentEditable = "true";
+        notesCell.textContent = "Add notes...";
+
+        const deleteCell = document.createElement("td");
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.className = "deleteRow";
         deleteButton.addEventListener("click", () => {
             row.remove();
         });
+        deleteCell.appendChild(deleteButton);
+
+        row.appendChild(currencyCell);
+        row.appendChild(balanceCell);
+        row.appendChild(notesCell);
+        row.appendChild(deleteCell);
 
         tbody.appendChild(row);
     });
@@ -49,17 +63,31 @@ document.addEventListener("DOMContentLoaded", () => {
         data.forEach((rowData) => {
             const row = document.createElement("tr");
 
-            row.innerHTML = `
-                <td contenteditable="true">${ rowData.currency }</td>
-                <td contenteditable="true">${ rowData.balance }</td>
-                <td contenteditable="true">${ rowData.notes }</td>
-                <td><button class="deleteRow">Delete</button></td>
-            `;
+            const currencyCell = document.createElement("td");
+            currencyCell.contentEditable = "true";
+            currencyCell.textContent = rowData.currency;
 
-            const deleteButton = row.querySelector(".deleteRow");
+            const balanceCell = document.createElement("td");
+            balanceCell.contentEditable = "true";
+            balanceCell.textContent = rowData.balance;
+
+            const notesCell = document.createElement("td");
+            notesCell.contentEditable = "true";
+            notesCell.textContent = rowData.notes;
+
+            const deleteCell = document.createElement("td");
+            const deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            deleteButton.className = "deleteRow";
             deleteButton.addEventListener("click", () => {
                 row.remove();
             });
+            deleteCell.appendChild(deleteButton);
+
+            row.appendChild(currencyCell);
+            row.appendChild(balanceCell);
+            row.appendChild(notesCell);
+            row.appendChild(deleteCell);
 
             tbody.appendChild(row);
         });
