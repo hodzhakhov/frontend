@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
     displayAddress.textContent = shortenAddress(fullAddress);
 
     copyButton.addEventListener('click', () => {
-        window.focus();
         if (navigator.clipboard) {
             navigator.clipboard.writeText(fullAddress).then(() => {
                 copyNotification.style.display = 'block';
