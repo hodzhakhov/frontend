@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Crypto Table</title>
-        <meta name="description" content="wlt app" />
-        <meta name="keywords" content="wlt, crypto" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./css/crypto_table.css">
-        <script defer src="./scripts/crypto_table.js"></script>
-    </head>
-    <body>
-        <main class="main">
-            <div class="main__container">
-                <h1>Crypto Table</h1>
-                <div>
-                    <button id="addRow">Add Row</button>
-                    <button id="saveTable">Save Table</button>
-                    <button id="loadTable">Load Table</button>
-                </div>
-                <table id="cryptoTable" class="crypto-table">
-                    <thead>
-                        <tr>
-                            <th>Currency</th>
-                            <th>Balance</th>
-                            <th>Notes</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-            </div>
-        </main>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Crypto Table</title>
+    <meta name="description" content="wlt app" />
+    <meta name="keywords" content="wlt, crypto" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/crypto_table.css" />
+    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
+    <script defer src="./scripts/crypto_table.js"></script>
+  </head>
+  <body>
+    <main class="main">
+      <div class="main__container">
+        <h1>Crypto Table</h1>
+        <div>
+          <button id="addRow">Add Row</button>
+          <button id="saveTable">Save Table</button>
+          <button id="loadTable">Load Table</button>
+        </div>
+        <table id="cryptoTable" class="crypto-table">
+          <thead>
+            <tr>
+              <th>Currency</th>
+              <th>Balance</th>
+              <th>Notes</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </main>
+  </body>
 </html>
