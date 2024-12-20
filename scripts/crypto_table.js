@@ -1,44 +1,4 @@
-function sessionStorageSet(key, value) {
-  try {
-    window.sessionStorage.setItem("__telegram__" + key, JSON.stringify(value));
-    return true;
-  } catch (e) {}
-  return false;
-}
-
-function sessionStorageGet(key) {
-  try {
-    return JSON.parse(window.sessionStorage.getItem("__telegram__" + key));
-  } catch (e) {}
-  return null;
-}
-
 document.addEventListener("DOMContentLoaded", () => {
-  var appTgVersion = 7.0;
-
-  var initParams = sessionStorageGet("initParams");
-  if (initParams) {
-    if (!initParams.tgWebAppVersion) {
-      initParams.tgWebAppVersion = appTgVersion;
-    }
-  } else {
-    initParams = {
-      tgWebAppVersion: appTgVersion,
-    };
-  }
-
-  sessionStorageSet("initParams", initParams);
-
-  const tg = window.Telegram.WebApp;
-  tg.BackButton.show();
-
-  const goBack = () => {
-    window.location.href = "index.html";
-    tg.BackButton.hide();
-  };
-
-  tg.BackButton.onClick(goBack);
-
   const table = document.getElementById("cryptoTable");
   const addRowButton = document.getElementById("addRow");
   const saveTableButton = document.getElementById("saveTable");
@@ -132,4 +92,16 @@ document.addEventListener("DOMContentLoaded", () => {
       tbody.appendChild(row);
     });
   });
+});
+
+window.addEventListener("load", function () {
+  let backBtn = window.Telegram.WebApp.BackButton;
+  backBtn.show();
+
+  const goBack = () => {
+    window.location.href = "index.html";
+    backBtn.hide();
+  };
+
+  backBtn.onClick(goBack);
 });

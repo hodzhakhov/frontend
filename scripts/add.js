@@ -8,48 +8,9 @@
   });
 })();
 
-function sessionStorageSet(key, value) {
-  try {
-    window.sessionStorage.setItem("__telegram__" + key, JSON.stringify(value));
-    return true;
-  } catch (e) {}
-  return false;
-}
-
-function sessionStorageGet(key) {
-  try {
-    return JSON.parse(window.sessionStorage.getItem("__telegram__" + key));
-  } catch (e) {}
-  return null;
-}
-
 document.addEventListener("DOMContentLoaded", () => {
-  var appTgVersion = 7.0;
-
-  var initParams = sessionStorageGet("initParams");
-  if (initParams) {
-    if (!initParams.tgWebAppVersion) {
-      initParams.tgWebAppVersion = appTgVersion;
-    }
-  } else {
-    initParams = {
-      tgWebAppVersion: appTgVersion,
-    };
-  }
-
-  sessionStorageSet("initParams", initParams);
-
-  const tg = window.Telegram.WebApp;
-  tg.BackButton.show();
-
-  const goBack = () => {
-    window.location.href = "index.html";
-    tg.BackButton.hide();
-  };
-
-  tg.BackButton.onClick(goBack);
-
-  const fullAddress = document.getElementById("fullAddress").textContent;
+  let fullAddress = document.getElementById("fullAddress").textContent;
+  fullAddress = fullAddress.replace(/[\r\n]/gm, "");
   const displayAddress = document.getElementById("displayAddress");
   const copyButton = document.getElementById("copyButton");
   const copyNotification = document.getElementById("copyNotification");
@@ -61,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return address;
   }
 
-  displayAddress.textContent = shortenAddress(fullAddress);
+  displayAddress.textContent = shortenAddress(fullAddress, 3, 3);
 
   copyButton.addEventListener("click", () => {
     if (navigator.clipboard) {
@@ -81,4 +42,16 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Clipboard API не поддерживается этим браузером.");
     }
   });
+});
+
+window.addEventListener("load", function () {
+  let backBtn = window.Telegram.WebApp.BackButton;
+  backBtn.show();
+
+  const goBack = () => {
+    window.location.href = "index.html";
+    backBtn.hide();
+  };
+
+  backBtn.onClick(goBack);
 });
