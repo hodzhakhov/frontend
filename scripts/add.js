@@ -10,7 +10,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   let fullAddress = document.getElementById("fullAddress").textContent;
-  fullAddress = fullAddress.replace(/[\r\n]/gm, "");
+  fullAddress = fullAddress.replace(/\s+/g, " ").trim();
   const displayAddress = document.getElementById("displayAddress");
   const copyButton = document.getElementById("copyButton");
   const copyNotification = document.getElementById("copyNotification");
