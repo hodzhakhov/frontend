@@ -43,15 +43,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
-window.addEventListener("load", function () {
-  let backBtn = window.Telegram.WebApp.BackButton;
-  backBtn.show();
-
-  const goBack = () => {
-    window.location.href = "index.html";
-    backBtn.hide();
-  };
-
-  backBtn.onClick(goBack);
-});
